@@ -15,8 +15,9 @@
 
     <a-scene shadow="type: pcfsoft">
         <a-assets>
-          <a-asset-item id="model1" src="assets/models/model-1/VVFINAL.obj"></a-asset-item>
+          <a-asset-item id="model1-obj" src="assets/models/model-1/VVFINAL.obj"></a-asset-item>
           <a-asset-item id="model1-mtl" src="assets/models/model-1/VVFINAL.mtl"></a-asset-item>
+          <a-asset-item id="model1" src="assets/models/model-1/PURBANO.glb"></a-asset-item>
 
           <img id="green-grass" src="assets/img/textures/green-grass-texture.png">
           <img id="sky" src="assets/img/hdr/lilienstein_4k-min.png">
@@ -40,11 +41,16 @@
             rotation="0 90 0"
             >
         </a-entity>
-        <a-entity obj-model="obj: #model1; mtl: #model1-mtl" 
+        <a-entity gltf-model="#model1" 
             position="-50 0 0"
             rotation="0 180 0"
             shadow="cast: true; receive: true;">
         </a-entity>
+        <!-- <a-entity obj-model="obj: #model1-obj; mtl: #model1-mtl" 
+            position="-50 0 0"
+            rotation="0 180 0"
+            shadow="cast: true; receive: true;">
+        </a-entity> -->
 
         <a-plane position="0 0 -25" rotation="-90 0 0" width="500" height="500" material="src: #green-grass; repeat: 50 50"></a-plane>        
         <a-camera wasd-controls="acceleration:100; fly: true;"></a-camera>
